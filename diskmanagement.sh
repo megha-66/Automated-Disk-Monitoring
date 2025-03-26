@@ -15,10 +15,10 @@ check_disk_usage() {
 	echo " Current disk usage : $USAGE%"
 
         if [ "$USAGE" -ge "$THRESHOLD" ]; then 
-		notify-send "$(date '+%Y-%m-%d %H:%M:%S')- Warning : Disk usage is at ${USAGE}%!" | tee -a $LOGFILE 
+		echo "$(date '+%Y-%m-%d %H:%M:%S')- Warning : Disk usage is at ${USAGE}%!" | tee -a $LOGFILE 
 		list_large_files
 	else
-		notify-send "$(date '+%Y-%m-%d %H:%M:%S')- Disk usage is under control at ${USAGE}%." | tee -a $LOGFILE 
+		echo "$(date '+%Y-%m-%d %H:%M:%S')- Disk usage is under control at ${USAGE}%." | tee -a $LOGFILE 
         fi	
 }
 
