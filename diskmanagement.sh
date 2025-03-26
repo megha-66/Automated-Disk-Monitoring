@@ -5,6 +5,8 @@ THRESHOLD=90
 ALERT_FOLDER="/home/megha_vas23"  # 
 LOGFILE="disk_usage_report.log"
 
+
+
 # function to check disk usage
 
 check_disk_usage() {
@@ -13,11 +15,11 @@ check_disk_usage() {
 	echo " Current disk usage : $USAGE%"
 
         if [ "$USAGE" -ge "$THRESHOLD" ]; then 
-		echo "$(date '+%Y-%m-%d %H:%M:%S')- Warning : Disk usage is at ${USAGE}%!" | tee -a $LOGFILE 
+		notify-send "$(date '+%Y-%m-%d %H:%M:%S')- Warning : Disk usage is at ${USAGE}%!" | tee -a $LOGFILE 
 		list_large_files
 	else
-		echo "$(date '+%Y-%m-%d %H:%M:%S')- Disk usage is under control at ${USAGE}%." | tee -a $LOGFILE 
-        fi 
+		notify-send "$(date '+%Y-%m-%d %H:%M:%S')- Disk usage is under control at ${USAGE}%." | tee -a $LOGFILE 
+        fi	
 }
 
 # function to list top 10 large files/directories
