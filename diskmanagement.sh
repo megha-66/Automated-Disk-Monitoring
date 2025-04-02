@@ -2,7 +2,7 @@
 
 # setting the variables
 THRESHOLD=90 
-ALERT_FOLDER="/home/megha_vas23"  # 
+ALERT_FOLDER="< path-to-folder-you-wanna-monitor-for-space >" # enter your path 
 LOGFILE="disk_usage_report.log"
 
 
