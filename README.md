@@ -27,3 +27,17 @@ A simple yet effective Bash script to **monitor disk usage** on your Linux syste
 
 ```bash
 chmod +x disk_monitor.sh
+```
+
+2. **Run the Script manually:**
+
+```bash
+./diskmanagement.sh /path/to/folder
+```
+**If you don't provide the path to folder, it defaults to root directory (```/```) -** 
+
+```bash
+./diskmanagement.sh
+```
+
+
